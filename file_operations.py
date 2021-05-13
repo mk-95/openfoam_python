@@ -17,7 +17,7 @@ def change_file_name(file_path, suffix):
   if os.path.isfile(file_path):
     os.system("mv "+file_path+" "+file_path+suffix)
   else:
-    print "Couldn\'t find "+file_path
+    print ("Couldn\'t find "+file_path)
   return
 
 
@@ -64,7 +64,7 @@ def clean_case(case_path="./"):
   # First make sure this is a case!
   for sf in standard_folders:
     if sf not in current_folders:
-      print "This is not an OpenFOAM case directory! Be careful! Exiting."
+      print ("This is not an OpenFOAM case directory! Be careful! Exiting.")
       return
   # Then filter out folders that are not standard folders and remove.
   folders = [ case_path+"/"+x for x in current_folders \
@@ -93,7 +93,7 @@ def change_line(file_path, included_strings, excluded_strings, replacement):
   Assumes file_path+'_temp' is not already a file.
   """
   if not os.path.isfile(file_path):
-    print file_path+" file not found!"
+    print (file_path+" file not found!")
     return
   temp_path = file_path+"_temp"
   temp_file = open(temp_path, 'w')
