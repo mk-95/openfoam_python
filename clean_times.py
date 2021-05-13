@@ -24,4 +24,4 @@ def leave_last_time(time_path):
 
   return 
 
-print leave_last_time("./")
+# print (leave_last_time("./"))
